@@ -5,6 +5,10 @@ description = "Analyze tokenizers for oddities"
 authors = ["Joe Lucas <joe@joetl.com>"]
 license = "Apache 2.0"
 readme = "README.md"
+packages = [
+    { include = "tokalyzer" },
+    { include = "tokalyzer/rules_dir" },
+]
 
 [tool.poetry.dependencies]
 python = "^3.9"
@@ -13,6 +17,13 @@ tokenizers = "^0.19.1"
 [tool.poetry.group.dev.dependencies]
 ruff = "^0.5.0"
 
+[tool.poetry.scripts]
+tokalyzer = "tokalyzer.analyze:main"
+
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.ruff]
+select = ["E", "F", "I"]
+line-length = 120
