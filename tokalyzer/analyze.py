@@ -11,9 +11,9 @@ class Analyzer:
         for rule in self.rules:
             rule(self.tokenizer)
 
+def main():
+    a = Analyzer("gpt2")
+    a.run()
 
 if __name__ == "__main__":
-    a = Analyzer("gpt2")
-    print(a.tokenizer)
-    print(a.rules)
-    a.run()
+    main()

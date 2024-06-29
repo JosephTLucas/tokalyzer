@@ -17,11 +17,10 @@ def duplicate_token_ids(tokenizer):
             duplicates.add(token_id)
         else:
             seen_ids.add(token_id)
-
-    print(f"Duplicate token IDs detected: {list(duplicates)}")
+    if duplicates:
+        print(f"Duplicate token IDs detected: {list(duplicates)}")
 
 
 if __name__ == "__main__":
     tokenizer_path = "gpt2"
-    duplicate_ids = duplicate_token_ids(tokenizer_path)
-    print("Duplicate token IDs:", duplicate_ids)
+    duplicate_token_ids(tokenizer_path)

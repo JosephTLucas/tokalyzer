@@ -17,11 +17,10 @@ def duplicate_keys(tokenizer):
             duplicates.add(key)
         else:
             seen.add(key)
-
-    print(f"Duplicate keys detected: {list(duplicates)}")
+    if duplicates:
+        print(f"Duplicate keys detected: {list(duplicates)}")
 
 
 if __name__ == "__main__":
     tokenizer_path = "gpt2"
-    duplicates = duplicate_keys(tokenizer_path)
-    print("Duplicate keys:", duplicates)
+    duplicate_keys(tokenizer_path)
